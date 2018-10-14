@@ -103,6 +103,38 @@ Resources:
         Ref: RouteTablePrivateC
       SubnetId:
         Ref: SubnetPrivateC
+  ElasticIPB:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain:
+        Ref: VpcTreinamento
+  ElasticIPC:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain:
+        Ref: VpcTreinamento
+  NatGatewayB:
+    Type: AWS::EC2::NatGateway
+    Properties: 
+      AllocationId:
+        Ref: ElasticIPB
+      SubnetId:
+        Ref: SubnetPrivateB
+      Tags: 
+        - Key: Name
+          Value: "NatGatewayB"
+    DependsOn: ElasticIPB
+  NatGatewayC:
+    Type: AWS::EC2::NatGateway
+    Properties: 
+      AllocationId:
+        Ref: ElasticIPC
+      SubnetId:
+        Ref: SubnetPrivateC
+      Tags: 
+        - Key: Name
+          Value: "NatGatewayC"
+    DependsOn: ElasticIPC
 
             
 
