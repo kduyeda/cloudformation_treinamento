@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  VpcTreinamento:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: "172.16.0.0/16"
+      Tags:
+        - Key: "Name"
+          Value: "VpcTreinamento"
