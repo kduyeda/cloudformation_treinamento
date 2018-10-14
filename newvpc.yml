@@ -105,14 +105,8 @@ Resources:
         Ref: SubnetPrivateC
   ElasticIPB:
     Type: AWS::EC2::EIP
-    Properties:
-      Domain:
-        Ref: VpcTreinamento
   ElasticIPC:
     Type: AWS::EC2::EIP
-    Properties:
-      Domain:
-        Ref: VpcTreinamento
   NatGatewayB:
     Type: AWS::EC2::NatGateway
     Properties: 
