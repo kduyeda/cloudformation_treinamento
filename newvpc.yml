@@ -59,6 +59,22 @@ Resources:
       Tags:
         - Key: Name
           Value: "RouteTablePublic"
+  RouteTablePrivateB:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: VpcTreinamento
+      Tags:
+        - Key: Name
+          Value: "RouteTablePrivateB"
+  RouteTablePrivateC:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: VpcTreinamento
+      Tags:
+        - Key: Name
+          Value: "RouteTablePrivateC"
             
 
 
