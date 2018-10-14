@@ -7,7 +7,7 @@ Resources:
       Tags:
         - Key: "Name"
           Value: "VpcTreinamento"
-  SubnetPublicaB:
+  SubnetPublicB:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: "us-east-1b"
@@ -15,10 +15,10 @@ Resources:
       MapPublicIpOnLaunch: True
       Tags:
         - Key: "Name"
-          Value: "SubnetPublicaB"
+          Value: "SubnetPublicB"
       VpcId:
         Ref: VpcTreinamento
-  SubnetPublicaC:
+  SubnetPublicC:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: "us-east-1b"
@@ -26,10 +26,10 @@ Resources:
       MapPublicIpOnLaunch: True
       Tags:
         - Key: "Name"
-          Value: "SubnetPublicaC"
+          Value: "SubnetPublicC"
       VpcId:
         Ref: VpcTreinamento
-  SubnetPrivadaB:
+  SubnetPrivateB:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: "us-east-1b"
@@ -37,10 +37,10 @@ Resources:
       MapPublicIpOnLaunch: False
       Tags:
         - Key: "Name"
-          Value: "SubnetPrivadaB"
+          Value: "SubnetPrivateB"
       VpcId:
         Ref: VpcTreinamento
-  SubnetPrivadaC:
+  SubnetPrivateC:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: "us-east-1b"
@@ -48,7 +48,7 @@ Resources:
       MapPublicIpOnLaunch: False
       Tags:
         - Key: "Name"
-          Value: "SubnetPrivadaC"
+          Value: "SubnetPrivateC"
       VpcId:
         Ref: VpcTreinamento
   RouteTablePublic:
@@ -75,6 +75,35 @@ Resources:
       Tags:
         - Key: Name
           Value: "RouteTablePrivateC"
+  RouteTableAssociationPublicB:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties: 
+      RouteTableId:
+        Ref: RouteTablePublic
+      SubnetId:
+        Ref: SubnetPublicB        
+  RouteTableAssociationPublicC:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties: 
+      RouteTableId:
+        Ref: RouteTablePublic
+      SubnetId:
+        Ref: SubnetPublicC        
+  RouteTableAssociationPrivateB:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties: 
+      RouteTableId:
+        Ref: RouteTablePrivateB
+      SubnetId:
+        Ref: SubnetPrivateB    
+  RouteTableAssociationPrivateC:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties: 
+      RouteTableId:
+        Ref: RouteTablePrivateC
+      SubnetId:
+        Ref: SubnetPrivateC
+
             
 
 
