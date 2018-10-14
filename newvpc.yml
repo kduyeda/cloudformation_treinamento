@@ -7,3 +7,15 @@ Resources:
       Tags:
         - Key: "Name"
           Value: "VpcTreinamento"
+  SubnetPublicaB:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: "us-east-1b"
+      CidrBlock: "172.16.0.0/24"
+      MapPublicIpOnLaunch: True
+      Tags:
+        - Key: "Name"
+          Value: "SubnetPublicaB"
+      VpcId:
+        Ref: VpcTreinamento
+        
