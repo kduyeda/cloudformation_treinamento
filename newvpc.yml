@@ -51,13 +51,14 @@ Resources:
           Value: "SubnetPrivadaC"
       VpcId:
         Ref: VpcTreinamento
-  Type: AWS::EC2::RouteTable
-  Properties:
-    VpcId:
-      Ref: VpcTreinamento
-    Tags:
-    - Key: RtPublic
-      Value: "RouteTablePublic"
+  RouteTablePublic:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: VpcTreinamento
+      Tags:
+        - Key: RtPublic
+          Value: "RouteTablePublic"
             
 
 
