@@ -18,4 +18,40 @@ Resources:
           Value: "SubnetPublicaB"
       VpcId:
         Ref: VpcTreinamento
+  SubnetPublicaC:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: "us-east-1b"
+      CidrBlock: "172.16.0.0/24"
+      MapPublicIpOnLaunch: True
+      Tags:
+        - Key: "Name"
+          Value: "SubnetPublicaC"
+      VpcId:
+        Ref: VpcTreinamento
+  SubnetPrivadaB:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: "us-east-1b"
+      CidrBlock: "172.16.0.0/24"
+      MapPublicIpOnLaunch: True
+      Tags:
+        - Key: "Name"
+          Value: "SubnetPrivadaB"
+      VpcId:
+        Ref: VpcTreinamento
+  SubnetPrivadaC:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: "us-east-1b"
+      CidrBlock: "172.16.0.0/24"
+      MapPublicIpOnLaunch: True
+      Tags:
+        - Key: "Name"
+          Value: "SubnetPrivadaC"
+      VpcId:
+        Ref: VpcTreinamento
+        
+
+
         
